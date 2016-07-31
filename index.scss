@@ -1,0 +1,493 @@
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+@mixin userem($size){
+  $list:800px,414px,412px,384px,375px,360px,320px;
+  @each $i in $list{
+    @media screen and (max-width: #{$i}){
+      html{
+        font-size: 100px*($i/$size);
+      }
+    }
+  }
+}
+@mixin zuoyou{
+  position: absolute;
+  left:0;
+  right: 0;
+  margin: auto;
+}
+@mixin shangxia{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  margin: auto;
+}
+@mixin zhong{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left:0;
+  right: 0;
+  margin: auto;
+}
+@include userem(1080px);
+.top{
+  width:100%;
+  height:0.75rem;
+  background-image: url(images/top.jpg);
+  background-size: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+}
+.header{
+  width:100%;
+  height: 1.44rem;
+  background: #393a3f;
+  padding-left:0.42rem;
+  box-sizing: border-box;
+  position: fixed;
+  top:0.75rem;
+  left: 0;
+  h3{
+    display: block;
+    height: 0.6rem;
+    font-size: 0.6rem;
+    color: #fff;
+    font-style: normal;
+    font-weight: none;
+    @include shangxia;
+  }
+  .search{
+    width:0.67rem;
+    height:0.67rem;
+    background: url(images/1.png);
+    background-size: 100%;
+    @include shangxia;
+    right:2.4rem;
+  }
+  .jiahao{
+    width:0.67rem;
+    height:0.67rem;
+    background: url(images/2.png);
+    background-size: 100%;
+    @include shangxia;
+    right:0.7rem;
+  }
+}
+.content{
+  width:100%;
+  position: fixed;
+  top:2.19rem;
+  bottom: 0;
+  left:0;
+    ul{
+      background: #fff;
+      width: 100%;
+      height: 14.19rem;
+      overflow-y: scroll;
+      $list:url(images/3.png),url(images/4.png),url(images/5.png),url(images/6.png),url(images/7.png),url(images/8.png),url(images/9.png),url(images/3.png);
+      @for $i from 1 through 8{
+        li:nth-of-type(#{$i}) .img{
+          background-image: nth($list,$i);
+        }
+      }
+      li{
+        width: 100%;
+        height: 1.92rem;
+        border-bottom: 1px solid #D9D9D9;
+        box-sizing: border-box;
+        padding: 0.24rem 0.42rem;
+        .img{
+          float: left;
+          width:1.44rem;
+          height: 1.44rem;
+          background-size: 100%;
+        }
+        .xinxi{
+          padding: 0.24rem 0;
+          margin-left: 0.36rem;
+          box-sizing: border-box;
+          width:60%;
+          height: 1.44rem;
+          float: left;
+          h5{
+            display: block;
+            width:100%;
+            height: 0.44rem;
+            font-size: 0.44rem;
+            font-style: normal;
+            font-weight: none;
+            color:#353535;
+          }
+          span{
+            display: block;
+            width:100%;
+            height:0.36rem;
+            font-size: 0.36rem;
+            color: #999;
+            margin-top: 0.24rem;
+            box-sizing: border-box;
+
+          }
+        }
+        .time{
+          padding: 0.24rem;
+          box-sizing: border-box;
+          color:#BBB;
+          font-size:0.14rem ;
+          width:1.44rem;
+          height:1.44rem;
+          float: right;
+        }
+      }
+    }
+}
+.footer{
+  width:100%;
+  height:1.6rem;
+  border-top: 2px solid #D6D6D6;
+  box-sizing: border-box;
+  position: fixed;
+  left:0;
+  bottom: 1.2rem;
+  .wx,.txl,.fx,.wo{
+    width:25%;
+    height:100%;
+    float: left;
+    p{
+      font-size: 0.24rem;
+      @include zuoyou;
+      bottom:0.1rem;
+      text-align: center;
+      color:#999;
+      &.active{
+        color:#45C01A;
+      }
+    }
+  }
+  .wx{
+    background: url(images/11.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+  .txl{
+    background: url(images/12.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+  .fx{
+    background: url(images/13.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+  .wo{
+    background: url(images/14.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+}
+.bottom{
+  width:100%;
+  height:1.2rem;
+  background-image: url(images/bottom.jpg);
+  background-size: 100%;
+  position: fixed;
+  bottom:0;
+  left:0;
+}
+.content-txl {
+  width: 100%;
+  position: fixed;
+  top: 2.19rem;
+  bottom: 0;
+  left: 0;
+
+  ul{
+    background: #fff;
+    width: 100%;
+    height: 14.19rem;
+    overflow-y: scroll;
+    $list:url(images/txl/aa.png),url(images/txl/bb.png),url(images/txl/cc.png),url(images/txl/dd.png),url(images/txl/3.png),url(images/txl/4.png),url(images/txl/5.png),url(images/txl/6.png),url(images/txl/7.png),url(images/txl/9.png);
+    @for $i from 1 through 10{
+      li:nth-of-type(#{$i}) .img{
+        background-image: nth($list,$i);
+      }
+    }
+    li{
+      height: 1.55rem;
+      border-bottom: 0.01rem solid #D9D9D9;
+      box-sizing: border-box;
+      margin-left:0.42rem;
+      margin-right: 0.42rem;
+      .img{
+        width:1.07rem;
+        height: 1.07rem;
+        background-size: 100%;
+        @include shangxia;
+        left:0;
+      }
+      .xinxi{
+        font-size: 0.48rem;
+        padding: 0.24rem 0;
+        height: 100%;
+        width:70%;
+        line-height: 1.07rem;
+        margin-left: 1.75rem;
+        box-sizing: border-box;
+        height: 1.44rem;
+        color:#353535;
+      }
+    }
+    .zimu{
+      width:100%;
+      height:0.66rem;
+      line-height: 0.66rem;
+      font-size: 0.28rem;
+      color:#888;
+      background: #EBEBEB;
+      padding-left: 0.42rem;
+      box-sizing: border-box;
+
+    }
+  }
+}
+.footer-txl{
+  width:100%;
+  height:1.6rem;
+  border-top: 2px solid #D6D6D6;
+  box-sizing: border-box;
+  position: fixed;
+  left:0;
+  bottom: 1.2rem;
+  .wx,.txl,.fx,.wo{
+    width:25%;
+    height:100%;
+    float: left;
+    p{
+      font-size: 0.24rem;
+      @include zuoyou;
+      bottom:0.1rem;
+      text-align: center;
+      color:#999;
+      &.active{
+        color:#45C01A;
+      }
+    }
+  }
+  .wx{
+    background: url(images/txl/wx.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+  .txl{
+    background: url(images/txl/txl.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+  .fx{
+    background: url(images/txl/fx.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+  .wo{
+    background: url(images/txl/wo.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+}
+.content-wo {
+  width: 100%;
+  position: fixed;
+  top: 2.19rem;
+  bottom: 0;
+  left: 0;
+
+  ul{
+    background: #fff;
+    width: 100%;
+    height: 14.19rem;
+    overflow-y: scroll;
+    .xian{
+      height: 0.05rem;
+      margin: 0 0.42rem;
+      background: #D9D9D9;
+    }
+    $list:url(images/wo/xiangce.png),url(images/wo/shoucang.png),url(images/wo/qianbao.png),url(images/wo/kabao.png),url(images/wo/biaoqing.png),url(images/wo/shezhi.png);
+    @for $i from 1 through 6{
+      li:nth-of-type(#{$i}){
+        background: nth($list,$i)no-repeat left center;
+        background-size: 1.43rem;
+      }
+    }
+    li{
+      width:100%;
+      height: 1.43rem;
+      h2{
+        font-size: 0.48rem;
+        padding-left:1.85rem;
+        line-height: 1.43rem;
+        box-sizing: border-box;
+        color:#353535;
+      }
+    }
+    .zimu{
+      width:100%;
+      height:0.6rem;
+      background: #EBEBEB;
+    }
+    .geren{
+      width:100%;
+      height:2.4rem;
+      background: url(images/wo/touxiang.png),url(images/wo/erweima.png);
+      background-repeat: no-repeat,no-repeat;
+      background-size: 1.9rem 1.9rem,0.56rem 0.56rem;
+      background-position: 0.42rem center,9.5rem center;
+      overflow: hidden;
+      h4{
+        display: block;
+        font-size: 0.5rem;
+        margin-left: 2.8rem;
+        margin-top: 0.66rem;
+      }
+      span{
+        display: block;
+        color:#999;
+        font-size: 0.4rem;
+        margin-left: 2.8rem;
+        margin-top: 0.2rem;
+      }
+    }
+  }
+}
+.footer-wo{
+  width:100%;
+  height:1.6rem;
+  border-top: 2px solid #D6D6D6;
+  box-sizing: border-box;
+  position: fixed;
+  left:0;
+  bottom: 1.2rem;
+  .wx,.txl,.fx,.wo{
+    width:25%;
+    height:100%;
+    float: left;
+    p{
+      font-size: 0.24rem;
+      @include zuoyou;
+      bottom:0.1rem;
+      text-align: center;
+      color:#999;
+      &.active{
+        color:#45C01A;
+      }
+    }
+  }
+  .wx{
+    background: url(images/wo/wx.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+  .txl{
+    background: url(images/wo/txl.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+  .fx{
+    background: url(images/wo/fx.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+  .wo{
+    background: url(images/wo/wo.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+}
+.xiala{
+  width: 6rem;
+  height: 7.19rem;
+  background: url(images/fx/xiala.png);
+  background-repeat: no-repeat;
+  background-size: 6rem 7.19rem;
+  position: fixed;
+  top:2.18rem;
+  right:0.35rem;
+  z-index: 100000;
+}
+.content-fx {
+  width: 100%;
+  position: fixed;
+  top: 2.19rem;
+  bottom: 0;
+  left: 0;
+
+  ul{
+    background: #fff;
+    width: 100%;
+    height: 14.19rem;
+    overflow-y: scroll;
+    .xian{
+      height: 0.03rem;
+      margin: 0 0.42rem;
+      background: #D9D9D9;
+    }
+    $list:url(images/fx/PYQ.png),url(images/fx/SYS.png),url(images/fx/YYY.png),url(images/fx/FJR.png),url(images/fx/PLP.png),url(images/fx/GW.png),url(images/fx/YX.png);
+    @for $i from 1 through 7{
+      li:nth-of-type(#{$i}){
+        background: nth($list,$i)no-repeat left center;
+        background-size: 1.43rem;
+      }
+    }
+    li{
+      width:100%;
+      height: 1.43rem;
+      h2{
+        font-size: 0.48rem;
+        padding-left:1.85rem;
+        line-height: 1.43rem;
+        box-sizing: border-box;
+        color:#353535;
+      }
+    }
+    .zimu{
+      width:100%;
+      height:0.6rem;
+      background: #EBEBEB;
+    }
+  }
+}
+.footer-fx{
+  width:100%;
+  height:1.6rem;
+  border-top: 2px solid #D6D6D6;
+  box-sizing: border-box;
+  position: fixed;
+  left:0;
+  bottom: 1.2rem;
+  .wx,.txl,.fx,.wo{
+    width:25%;
+    height:100%;
+    float: left;
+    p{
+      font-size: 0.24rem;
+      @include zuoyou;
+      bottom:0.1rem;
+      text-align: center;
+      color:#999;
+      &.active{
+        color:#45C01A;
+      }
+    }
+  }
+  .wx{
+    background: url(images/fx/wx.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+  .txl{
+    background: url(images/fx/txl.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+  .fx{
+    background: url(images/fx/fx.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+  .wo{
+    background: url(images/fx/wo.png)no-repeat center 0.2rem;
+    background-size: 0.82rem;
+  }
+}
+
+
